@@ -61,12 +61,14 @@ const App: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showTransitionOut, setShowTransitionOut] = useState(false);
 
-  useEffect(() => {
-    if (user) {
-        localStorage.setItem('hero_user_data', JSON.stringify(user));
-        if (currentScreen === 'welcome') setCurrentScreen('map');
-    }
-  }, [user]);
+useEffect(() => {
+    if (user) {
+        
+        localStorage.setItem('hero_user_data', JSON.stringify(user));
+    }
+    
+    if (currentScreen === 'welcome') setCurrentScreen('map'); 
+  }, [user, currentScreen]);
 
   // --- Handlers ---
 
