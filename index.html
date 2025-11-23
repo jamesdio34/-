@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小勇者模擬考大冒險</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans TC"', 'sans-serif'],
+              display: ['"Fredoka"', 'sans-serif'],
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'pop': 'pop 0.3s ease-out forwards',
+              'shake': 'shake 0.5s ease-in-out',
+              'spin-slow': 'spin 3s linear infinite',
+              'drop-bounce': 'drop-bounce 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+              'shake-hard': 'shake-hard 0.5s ease-in-out infinite',
+              'flash': 'flash 0.5s ease-out forwards',
+              'slam-enter': 'slam-enter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
+              'slash': 'slash 0.3s ease-out forwards',
+              'shutter-in': 'shutter-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+              'shutter-out': 'shutter-out 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+            },
+            keyframes: {
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              shake: {
+                '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },
+                '25%': { transform: 'translateX(-10px) rotate(-5deg)' },
+                '75%': { transform: 'translateX(10px) rotate(5deg)' },
+              },
+              'drop-bounce': {
+                '0%': { transform: 'translateY(-300px) scale(1.2)', opacity: '0' },
+                '60%': { transform: 'translateY(20px) scale(0.9)' },
+                '80%': { transform: 'translateY(-10px) scale(1.05)', opacity: '1' },
+                '100%': { transform: 'translateY(0) scale(1)' },
+              },
+              'shake-hard': {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(-15deg)' },
+                '75%': { transform: 'rotate(15deg)' },
+              },
+              'flash': {
+                '0%': { backgroundColor: 'rgba(255, 255, 255, 0)' },
+                '50%': { backgroundColor: 'rgba(255, 255, 255, 1)' },
+                '100%': { backgroundColor: 'rgba(255, 255, 255, 0)' },
+              },
+              'slam-enter': {
+                '0%': { transform: 'scale(3) rotate(10deg)', opacity: '0' },
+                '100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' },
+              },
+              'slash': {
+                '0%': { clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)' },
+                '100%': { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' },
+              },
+              'shutter-in': {
+                '0%': { transform: 'scaleY(0)' },
+                '100%': { transform: 'scaleY(1)' },
+              },
+              'shutter-out': {
+                '0%': { transform: 'scaleY(1)' },
+                '100%': { transform: 'scaleY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f0f9ff;
+        touch-action: manipulation; /* Improves touch response */
+      }
+      /* Custom scrollbar for cuter look */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e0f2fe;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #38bdf8;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0ea5e9;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
